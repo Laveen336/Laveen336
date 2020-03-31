@@ -1,1 +1,76 @@
-# Laveen336
+Consider a scheduling approach which is non pre-emptive similar to shortest job next in nature. The priority 
+of each job is dependent on its estimated run time, and also the amount of time it has spent waiting. Jobs gain 
+higher priority the longer they wait, which prevents indefinite postponement. The jobs that have spent a long 
+time waiting compete against those estimated to have short run times. The priority can be computed as:
+= 1 +
+/
+Using the data given below compute the waiting time and turnaround time for each process and average 
+waiting time and average turnaround time.
+Process Arrival time
+P1 0
+P2 5
+P3 13
+P4 17
+
+EXPLANATION:
+Shortestjobfirst(SJF)orshortestjobnext,isascheduling
+policythatselectsthewaitingprocesswiththesmallest
+executiontimetoexecutenext.SJNisanon-preemptive
+algorithm.
+ ShortestJobfirsthastheadvantageofhavingaminimum
+averagewaitingtimeamongallschedulingalgorithms.
+ ItisaGreedyAlgorithm.
+ Itmaycausestarvationifshorterprocesseskeepcoming.
+Thisproblemcanbesolvedusingtheconceptofageing.
+ ItispracticallyinfeasibleasOperatingSystemmaynot
+knowbursttimeandthereforemaynotsortthem.Whileit
+isnotpossibletopredictexecutiontime,severalmethods
+canbeusedtoestimatetheexecutiontimeforajob,such
+asaweightedaverageofpreviousexecutiontimes.SJFcan
+beusedinspecializedenvironmentswhereaccurate
+estimatesofrunningtimeareavailable.
+
+ HOWTOSJF:
+1. CompletionTime:Timeatwhichprocesscompletesits
+execution.
+2.TurnAroundTime:TimeDifferencebetweencompletion
+timeandarrivaltime.TurnAroundTime=CompletionTime
+–ArrivalTime
+3.WaitingTime(W.T):TimeDifferencebetweenturnaround
+timeandbursttime.
+WaitingTime=TurnAroundTime–BurstTime
+.ADVANTAGESOFSJF
+1.Maximumthroughput
+2.Minimumaveragewaitingandturnaroundtime
+3.Accordingtothedefinition,shortprocessesareexecuted
+firstandthenfollowedbylongerprocesses.
+4.Thethroughputisincreasedbecausemoreprocessescan
+beexecutedinlessamountoftime.
+.DISADVANTAGESOFSJF
+1.Maysufferwiththeproblemofstarvation
+2.ItisnotimplementablebecausetheexactBursttimefora
+processcan'tbeknowninadvance.
+3.ThetimetakenbyaprocessmustbeknownbytheCPU
+beforehand,whichisnotpossible.
+4.Longerprocesseswillhavemorewaitingtime,eventually
+they'llsufferstarvation.
+Therearedifferenttechniquesavailablebywhich,theCPU
+bursttimeoftheprocesscanbedetermined.Wewilldiscuss
+themlaterindetail.
+ShortestJobFirstPreemptiveSchedulingisalsoknownas
+ShortestremainingTime(SRT)orShortestNextTime(SNT).
+1.Thechoiceofpreemptiveandnonpreemptiveariseswhen
+anewprocessarrivesatthereadyqueueandaprevious
+processisnotfinishedandisbeingexecuted.Ifthenext
+CPUburstofnewprocessisshorterthancurrent
+executingprocess,theninpreemptiveversion,itwillstop
+thatprocessandwillstartexecutingthenewlyarrived
+process.
+2.While,innonpreemptiveversionofSJF,evenifthe
+arrivingprocessisshorterthancurrentlyexecuting
+process,currentprocessisnotstopped.Afterthecurrent
+processfinishes,thenthenewprocessgetsinthequeue.
+Thisisthekeydifferencebetweenpreemptiveand
+preemptiveversionofSJF.
+3.Thecurrentstateoftheprocessissavedbythecontext
+switchandtheCPUisgiventoanotherprocess.
